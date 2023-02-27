@@ -20,8 +20,8 @@ Route::get('products/{product1}', [App\Http\Controllers\ProductController::class
 Route::get('products', [App\Http\Controllers\ProductController::class, 'create'])->name('products.create')->middleware('auth');
 Route::post('products', [App\Http\Controllers\ProductController::class, 'store'])->name('products.store')->middleware('auth');
 Route::get('products_delete/{product}', [App\Http\Controllers\ProductController::class, 'delete'])->name('products.delete')->middleware('auth');
-Route::get('products_edit', [App\Http\Controllers\ProductController::class, 'edit'])->name('products.edit')->middleware('auth');
-Route::get('products_update/{product}', [App\Http\Controllers\ProductController::class, 'update'])->name('products.update')->middleware('auth');
+Route::get('products_edit/{product}', [App\Http\Controllers\ProductController::class, 'edit'])->name('products.edit')->middleware('auth');
+Route::post('products_update/{product}', [App\Http\Controllers\ProductController::class, 'update'])->name('products.update')->middleware('auth');
 
 
 Route::get('comment',[App\Http\Controllers\CommintController::class,'store'])->name('comment')->middleware('auth');

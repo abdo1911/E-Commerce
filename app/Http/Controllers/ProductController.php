@@ -21,10 +21,9 @@ class ProductController extends Controller
         $categories = category::all();
         return view('products.create',compact('categories'));
     }
-    function edit( product $product)
+    function edit(product $product)
     {
         $categories = category::all();
-        $product = product::all();
         return view('products.edit',compact('categories','product'));
     }
 
@@ -38,7 +37,6 @@ class ProductController extends Controller
              Storage::delete($product);
              $product->delete();
              return redirect()->back()->with('status',"Product Deleted Successfully");
-
     }
 
 
